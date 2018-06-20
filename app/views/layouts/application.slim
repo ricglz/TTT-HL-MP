@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title = yield(:title)
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body#application data-controller=controller.controller_name data-action=controller.action_name
+    = yield
