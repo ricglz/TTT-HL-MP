@@ -1,0 +1,25 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        username: "Nombre de usuario"
+        password: "Contraseña"
+    errors:
+      messages:
+        blank: "no puede estar en blanco."
+        uniqueness: "ya fue utilizado."
+        too_short:
+          one: es demasiado corto (mínimo 1 caracter)
+          other: es demasiado corto (mínimo %{count} caracteres)
+      models:
+        user:
+          attributes:
+            username:
+            password:
+              too_short:
+                one: es demasiada corta (mínimo 1 caracter)
+                other: es demasiada corta (mínimo %{count} caracteres)
+  attributes:
+    username: "Nombre de usuario"
+    password: "Contraseña"
+    sign_up: "Registrarse"

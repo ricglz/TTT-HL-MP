@@ -30,4 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        username: "Username"
+        password: "Password"
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              uniqueness: "has already been taken."
+  attributes:
+    username: "Username"
+    password: "Password"
+    sign_up: "Sign up"
