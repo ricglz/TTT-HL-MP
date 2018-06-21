@@ -7,7 +7,7 @@ es:
     errors:
       messages:
         blank: "no puede estar en blanco."
-        uniqueness: "ya fue utilizado."
+        taken: "no está disponible."
         too_short:
           one: es demasiado corto (mínimo 1 caracter)
           other: es demasiado corto (mínimo %{count} caracteres)
@@ -23,3 +23,7 @@ es:
     username: "Nombre de usuario"
     password: "Contraseña"
     sign_up: "Registrarse"
+  messages:
+    login_successful: "Iniciaste sesión exitosamente"
+    incorrect_password: "Contraseña incorrecta"
+    user_unexistant: "El usuario no existe"

@@ -45,3 +45,7 @@ en:
     username: "Username"
     password: "Password"
     sign_up: "Sign up"
+  messages:
+    login_successful: "Log in successful"
+    incorrect_password: "Incorrect password"
+    user_unexistant: "User doesn't exist"
