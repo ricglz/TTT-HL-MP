@@ -1,0 +1,11 @@
+<script type="text/javascript"  data-turbolinks-eval="true">
+  <% flash.each do |type, message| %>
+    <% if message.is_a? Array %>
+      <% message.each do |m| %>
+        <%= "alertify.#{type}("%> "<%== j m %>" <%= ");" %>
+      <% end %>
+    <% else %>
+        <%= "alertify.#{type}("%> "<%== j message %>" <%= ");" %>
+    <% end %>
+  <% end %>
+</script>

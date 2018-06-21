@@ -10,4 +10,5 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body#application data-controller=controller.controller_name data-action=controller.action_name
+    = render 'layouts/notification'
     = yield

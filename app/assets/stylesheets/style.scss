@@ -1,5 +1,8 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "alertify";
+@import "alertify/default";
+@import "alertify/bootstrap";
 
 html,
 body {
