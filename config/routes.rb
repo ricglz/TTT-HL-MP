@@ -5,7 +5,5 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: :sign_up
   post '/signup', to: 'users#create'
 
-  get '/success', to: 'application#success', as: :success
-
   resources :sessions
 end
