@@ -1,3 +1,61 @@
 // Place all the styles related to the boards controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+div.board-container {
+  font-family: 'Montserrat', sans-serif;
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  hr{
+    width: 80%;
+    border: 0.38px solid;
+  }
+  #board {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    div.big-box{
+      height: 135px;
+      border: 2.5px solid black;
+      padding: 0px;
+    }
+    div.box {
+      border: 1px solid black;
+      margin: auto 0;
+      font-size: 200%;
+      text-align: center;
+      height: 44px;
+      padding: 0px;
+    }
+    div.X{
+      color: #E44;
+    }
+    div.O{
+      color: #44E;
+    }
+  }
+  span {
+    font-size: 24px;
+    &.oScore, &.oSign {
+      color: #44E;
+    }
+    &.xScore, &.xSign {
+      color: #E44;
+    }
+  }
+  div.mr-8 {
+    margin-right: 8rem !important;
+  }
+  div.ml-8 {
+    margin-left: 8rem !important;
+  }
+  a{
+    color: #111;
+    font-size: 150%;
+  }
+}

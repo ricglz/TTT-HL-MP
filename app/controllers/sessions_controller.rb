@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       flash[:success] = t('messages.login_successful')
-      redirect_to success_path
+      redirect_to game_path
     else
       flash[:error] = user ? t('messages.incorrect_password') : t('messages.user_unexistant')
       render 'new'

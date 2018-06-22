@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'users#new', as: :sign_up
   post '/signup', to: 'users#create'
-
+  get '/game', to: 'boards#show', as: :game
   resources :sessions
 end
