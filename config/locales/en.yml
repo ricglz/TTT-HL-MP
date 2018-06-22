@@ -39,12 +39,14 @@ en:
       models:
         user:
           attributes:
-            username:
-              uniqueness: "has already been taken."
+            password_confirmation:
+              accepted: "is not the same as password."
   attributes:
     username: "Username"
     password: "Password"
+    password_confirmation: "Confirm password"
     sign_up: "Sign up"
+    log_in: "Log in"
   messages:
     login_successful: "Log in successful"
     incorrect_password: "Incorrect password"

@@ -19,10 +19,14 @@ es:
               too_short:
                 one: es demasiada corta (mínimo 1 caracter)
                 other: es demasiada corta (mínimo %{count} caracteres)
+            password_confirmation:
+              confirmation: no coincide con la contraseña.
   attributes:
     username: "Nombre de usuario"
     password: "Contraseña"
+    password_confirmation: "Confirmar contraseña"
     sign_up: "Registrarse"
+    log_in: "Iniciar sesión"
   messages:
     login_successful: "Iniciaste sesión exitosamente"
     incorrect_password: "Contraseña incorrecta"
