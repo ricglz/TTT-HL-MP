@@ -6,6 +6,8 @@ ruby '2.5.1'
 gem 'alertifyjs-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'material_icons'
+gem 'material-sass', '~> 4.1.1'
 gem 'simple_form'
 gem 'slim'
 

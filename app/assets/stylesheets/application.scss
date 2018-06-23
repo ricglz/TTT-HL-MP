@@ -14,3 +14,10 @@
  *= require_self
  *= require_style
  */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "alertify";
+@import "alertify/default";
+@import "alertify/bootstrap";
+@import "material";
