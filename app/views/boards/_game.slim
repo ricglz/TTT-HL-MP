@@ -1,0 +1,6 @@
+.col-sm-7#board
+  - for i in 0..2
+    .row
+      = render 'big_box', i:i*3*9
+      = render 'big_box', i:(i*3+1)*9
+      = render 'big_box', i:(i*3+2)*9

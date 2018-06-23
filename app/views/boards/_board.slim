@@ -1,6 +1,6 @@
-.col-md-4#board
-  - for i in 0..2
-    .row
-      = render 'big_box', i:i*3*9
-      = render 'big_box', i:(i*3+1)*9
-      = render 'big_box', i:(i*3+2)*9
+li.row
+  col
+    span Host:
+    span = board.host
+  col
+    = link_to "Join", game_path(board.id), class: "btn btn-primary btn-block"

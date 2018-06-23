@@ -1,0 +1,4 @@
+.container
+  = simple_form_for :session, url: root_path  do |f|
+    = f.button :submit, t('attributes.log_in'), class: 'btn btn-secondary btn-float'
+  ul = render @boards
