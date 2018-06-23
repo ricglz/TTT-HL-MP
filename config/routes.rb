@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/game', to: 'boards#show', as: :game
   resources :sessions
+
+  mount ActionCable.server => '/cable'
 end
