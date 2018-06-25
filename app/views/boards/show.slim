@@ -2,5 +2,5 @@
 .text-center.board-container.mt-4.container
   .row
     = render 'header'
-  .row.d-flex.justify-content-center
+  .row.d-flex.justify-content-center data-channel="game" data-game-id=@board.id
     = render 'game'

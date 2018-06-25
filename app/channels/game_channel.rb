@@ -1,15 +1,19 @@
 class GameChannel < ApplicationCable::Channel
-  def subscribed
-    stream_from "room"
+  def subscribed; end
+
+  def unsubscribed; end
+
+  def join(data)
+    stop_all_streams
+    stream_from "room#{data['game_id']}"
   end
 
-  def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+  def leaveRoom
+    stop_all_streams
   end
 
   def make_move(data)
     puts "****************************************"
-    puts data['move']
-    ActionCable.server.broadcast "room", move:data['move']
+    ActionCable.server.broadcast "room#{data['game_id']}", move:data['move']
   end
 end

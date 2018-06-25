@@ -1,7 +1,11 @@
 #= require jquery3
 App.game = App.cable.subscriptions.create "GameChannel",
+  collection: -> $("[data-channel='game']")
+
   connected: ->
-    console.log("Connected")
+    setTimeout =>
+      @joinRoom()
+    , 1000
 
   disconnected: ->
     # Called when the subscription has been terminated by the server
@@ -10,7 +14,11 @@ App.game = App.cable.subscriptions.create "GameChannel",
     console.log('llega received')
     console.log(data)
 
+  joinRoom: ->
+    if gameId = @collection().data('game-id')
+      @perform 'join', game_id: gameId
+    else
+      @perform 'leaveRoom'
+
   make_move: (data) ->
-    console.log('llega move')
-    console.log(data)
-    @perform 'make_move', move:data
+    @perform 'make_move', move:data, game_id:@collection().data('game-id')
