@@ -5,7 +5,13 @@ class GameChannel < ApplicationCable::Channel
 
   def join(data)
     stop_all_streams
-    stream_from "room#{data['game_id']}"
+    puts data['game_id']
+    game_id = data['game_id']
+    puts game_id
+    if game_id
+      stream_from "room#{game_id}"
+      ActionCable.server.broadcast "room#{game_id}", newcommer:true if Board.find(game_id).guest != nil
+    end
   end
 
   def leaveRoom
@@ -13,7 +19,6 @@ class GameChannel < ApplicationCable::Channel
   end
 
   def make_move(data)
-    puts "****************************************"
     ActionCable.server.broadcast "room#{data['game_id']}", move:data['move']
   end
 end

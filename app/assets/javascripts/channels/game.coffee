@@ -11,14 +11,16 @@ App.game = App.cable.subscriptions.create "GameChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    console.log('llega received')
-    console.log(data)
+    console.log('llegan datos')
 
   joinRoom: ->
-    if gameId = @collection().data('game-id')
-      @perform 'join', game_id: gameId
+    if @gameId
+      @perform 'join', game_id: @gameId()
     else
       @perform 'leaveRoom'
 
   make_move: (data) ->
-    @perform 'make_move', move:data, game_id:@collection().data('game-id')
+    @perform 'make_move', move:data, game_id:@gameId()
+
+  gameId: ->
+    @collection().data('game-id')

@@ -17,8 +17,11 @@ var changeScore = function($oldScore) {
 
 //Apply movement
 App.game.received = function(data) {
-  $box = $boxes.eq(data['move'])
-  console.log($box);
+  if (data['newcommer']) {
+    alertify.success("Match started");
+    return;
+  }
+  $box = $boxes.eq(data['move']);
   $box.text(turn);
   $box.addClass(turn);
   if (turn === 'O' && $('html').hasClass('ai')) fadeIn($box, 500);
