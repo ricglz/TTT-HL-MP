@@ -5,22 +5,24 @@ App.game = App.cable.subscriptions.create "GameChannel",
   connected: ->
     setTimeout =>
       @joinRoom()
-    , 1000
+    , 250
 
   disconnected: ->
-    # Called when the subscription has been terminated by the server
+    @perform 'leave_room', game_id: @gameId()
 
   received: (data) ->
-    console.log('llegan datos')
 
   joinRoom: ->
     if @gameId
       @perform 'join', game_id: @gameId()
     else
-      @perform 'leaveRoom'
+      @perform 'leave_room'
 
-  make_move: (data) ->
-    @perform 'make_move', move:data, game_id:@gameId()
+  make_move: (move, turn) ->
+    @perform 'make_move', move:move, game_id:@gameId(), turn:turn
+
+  resetGame: ->
+    @perform 'reset_game', game_id: @gameId()
 
   gameId: ->
     @collection().data('game-id')

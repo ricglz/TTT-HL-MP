@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.message-container {
+  font-family: 'Montserrat', sans-serif;
+  h1 {
+    font-size: 32px;
+  }
+}
 
 div.board-container {
+  display: none;
   font-family: 'Montserrat', sans-serif;
   h1 {
     font-size: 32px;

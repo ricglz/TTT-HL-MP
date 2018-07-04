@@ -7,6 +7,8 @@ var turn = 'X';
 var moves = 0;
 var bigBoxPos = 0;
 var firstTurn = true;
+var $gameBoard;
+var $gameMessage;
 
 //Change score
 var changeScore = function($oldScore) {
@@ -15,12 +17,36 @@ var changeScore = function($oldScore) {
   $oldScore.text(score);
 };
 
-//Apply movement
+var startMatch = function() {
+  $gameBoard.css("display", "block");
+  $gameMessage.css("display", "none");
+}
+
+//Recieves action for every user
 App.game.received = function(data) {
   if (data['newcommer']) {
+    startMatch();
     alertify.success("Match started");
     return;
   }
+  else if (data['resetGame']) {
+    surrender(data['loser']);
+  }
+  else {
+    applyMovement(data);
+  }
+};
+
+var surrender = function(loser) {
+  if (loser==="X") {
+    changeScore($('.xScore').eq(0));
+  } else {
+    changeScore($('.oScore').eq(0));
+  }
+  resetGame();
+}
+
+var applyMovement = function(data) {
   $box = $boxes.eq(data['move']);
   $box.text(turn);
   $box.addClass(turn);
@@ -49,7 +75,7 @@ App.game.received = function(data) {
     alertify.success("Neither player won.");
     resetGame();
   }
-};
+}
 
 //Check if it is Occupied
 var isOccupied = function(text) {
@@ -210,25 +236,26 @@ var changeColor = function($bigBox, color) {
 var changeColors = function($box) {
   changeColor($bigBoxes.eq(bigBoxPos), "#999");
   bigBoxPos = $box.attr('id')%9;
-  console.log(bigBoxPos);
   changeColor($bigBoxes.eq(bigBoxPos), "white");
 };
 
 $(document).ready(function() {
   $boxes = $('.box');
   $bigBoxes = $('.big-box');
+  $gameMessage = $('.message-container');
+  $gameBoard = $('.board-container')
 
   $('#reset').on('click', function() {
-    resetGame();
+    App.game.resetGame();
   });
   $('#back').on('click', function() {
-    window.location.href = "index.html";
+    App.game.disconnected();
   });
 
   $boxes.on('click', function() {
     var contains = $.contains($bigBoxes.get(bigBoxPos), $(this).get(0));
     if (($(this).text() === "" && contains) || firstTurn) {
-      App.game.make_move($(this).attr('id'))
+      App.game.make_move($(this).attr('id'), turn);
     }
   });
 });
