@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'test/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+    - 'bin/**/*'
+    - 'lib/templates/**/*'
+    - 'lib/generators/**/*'
+    - 'lib/tasks/**/*'

@@ -1,16 +1,14 @@
+# frozen_string_literal: true
+
+# Module that provides helper functions focused on sessions
 module SessionsHelper
   def log_in(user)
     cookies.signed[:user_id] = user.id
   end
 
-  def current_user?(user)
-    user = current_user
-  end
-
   def current_user
-    if (user_id = cookies.signed[:user_id])
-     @current_user ||= User.find(user_id)
-    end
+    user_id = cookies.signed[:user_id]
+    @current_user ||= User.find(user_id) if user_id
   end
 
   def logged_in?

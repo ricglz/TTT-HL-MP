@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class that controls the whole application
 class ApplicationController < ActionController::Base
   before_action :set_locale
 
