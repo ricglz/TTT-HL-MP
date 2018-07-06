@@ -19,11 +19,21 @@ var changeScore = function($oldScore) {
   $oldScore.text(score);
 };
 
+var resetScore = function() {
+  $('.oScore').eq(0).text(0);
+  $('.xScore').eq(0).text(0);
+}
+
 var startMatch = function() {
   $gameBoard.css("display", "block");
   $gameMessage.css("display", "none");
   $started = true;
 }
+
+var leaveRoom = function() {
+  $gameBoard.css("display", "none");
+  $gameMessage.css("display", "block");
+  $started = false;
 }
 
 //Recieves action for every user
@@ -35,6 +45,11 @@ App.game.received = function(data) {
   }
   else if (data['resetGame']) {
     surrender(data['loser']);
+  }
+  else if (data['leaveRoom']) {
+    leaveRoom();
+    resetScore();
+    resetGame();
   }
   else {
     applyMovement(data);
