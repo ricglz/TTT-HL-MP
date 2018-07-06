@@ -8,7 +8,7 @@ Offical repo  [github.com/ricglz0201/TTT-HL-MP](https://github.com/ricglz0201/TT
 ## How to run it
 
 1. Run `ruby - v` to know your current version of ruby. It should be at least `2.5.1`
-	* If it's not the correct version install it [here](https://www.ruby-lang.org/en/downloads/)
+	* If it's not the correct version or you don't have it, install it [here](https://www.ruby-lang.org/en/downloads/)
 2. Run `bundle install`
 3. Run `rails s`
 
