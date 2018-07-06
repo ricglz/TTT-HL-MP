@@ -15,6 +15,7 @@ gem 'rails_12factor'
 gem 'rubocop', '~> 0.57.2', require: false
 gem 'simple_form'
 gem 'slim'
+gem 'sprockets' ~> 3.7.2
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
