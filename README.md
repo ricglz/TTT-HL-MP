@@ -13,7 +13,7 @@ Offical repo  [github.com/ricglz0201/TTT-HL-MP](https://github.com/ricglz0201/TT
 3. Run `rails s`
 
 ## Contributing
-note: Any changes or Pull Request regarding material assets should be made in official [material](https://github.com/Daemonite/material) repo.
+note: Any changes or Pull Request regarding material assets should be made in official [repo](https://github.com/ricglz0201/TTT-HL-MP). And make sure you follow the [gidelines](https://github.com/ricglz0201/TTT-HL-MP/blob/master/CONTRIBUTING.md)
 
 1. Fork it ( https://github.com/ricglz0201/TTT-HL-MP/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
