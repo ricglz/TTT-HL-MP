@@ -7,10 +7,12 @@ module ApplicationCable
     end
 
     def find_verified_user
-      if verified_user = User.find(cookies.signed[:user_id])
-        verified_user
-      else
-        reject_unauthorized_connection
+      if cookies.signed[:user_id].present?
+        if verified_user = User.find(cookies.signed[:user_id])
+          verified_user
+        else
+          reject_unauthorized_connection
+        end
       end
     end
   end
