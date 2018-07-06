@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  *= require_style
+ *= require material_icons
+ *= require material
  */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -20,4 +22,3 @@
 @import "alertify";
 @import "alertify/default";
 @import "alertify/bootstrap";
-@import "material";

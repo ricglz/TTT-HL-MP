@@ -7,8 +7,8 @@
     = render 'header'
   .row.d-flex.justify-content-center data-channel="game" data-game-id=@board.id
     = render 'game'
-    .row
-      .col
-        button#reset.btn.btn-danger.btn-block = t(:surrender)
-      .col
-        = link_to t(:leave_game), root_path, id:"back", class: "btn btn-danger btn-block"
+  .row
+    .col
+      button#reset.btn.btn-danger.btn-block.btn-radius = t(:surrender)
+    .col
+      = link_to t(:leave_game), root_path, id:"back", class: "btn btn-danger btn-block btn-radius text-white"
