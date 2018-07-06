@@ -9,6 +9,8 @@ var bigBoxPos = 0;
 var firstTurn = true;
 var $gameBoard;
 var $gameMessage;
+var $isOnBoard;
+var $started = false;
 
 //Change score
 var changeScore = function($oldScore) {
@@ -17,9 +19,21 @@ var changeScore = function($oldScore) {
   $oldScore.text(score);
 };
 
+var resetScore = function() {
+  $('.oScore').eq(0).text(0);
+  $('.xScore').eq(0).text(0);
+}
+
 var startMatch = function() {
   $gameBoard.css("display", "block");
   $gameMessage.css("display", "none");
+  $started = true;
+}
+
+var leaveRoom = function() {
+  $gameBoard.css("display", "none");
+  $gameMessage.css("display", "block");
+  $started = false;
 }
 
 //Recieves action for every user
@@ -27,10 +41,14 @@ App.game.received = function(data) {
   if (data['newcommer']) {
     startMatch();
     alertify.success("Match started");
-    return;
   }
   else if (data['resetGame']) {
     surrender(data['loser']);
+  }
+  else if (data['leaveRoom']) {
+    leaveRoom();
+    resetScore();
+    resetGame();
   }
   else {
     applyMovement(data);
@@ -39,9 +57,9 @@ App.game.received = function(data) {
 
 var surrender = function(loser) {
   if (loser==="X") {
-    changeScore($('.xScore').eq(0));
-  } else {
     changeScore($('.oScore').eq(0));
+  } else {
+    changeScore($('.xScore').eq(0));
   }
   resetGame();
 }
@@ -243,8 +261,11 @@ $(document).ready(function() {
   $boxes = $('.box');
   $bigBoxes = $('.big-box');
   $gameMessage = $('.message-container');
-  $gameBoard = $('.board-container')
-
+  $isOnBoard = $("[data-channel='game']").data() !== undefined;
+  $gameBoard = $('.board-container');
+  if ($isOnBoard) {
+    App.game.joinRoom();
+  }
   $('#reset').on('click', function() {
     App.game.resetGame();
   });
@@ -258,4 +279,13 @@ $(document).ready(function() {
       App.game.make_move($(this).attr('id'), turn);
     }
   });
+});
+
+$(document).on('turbolinks:load', function() {
+  $isOnBoard = $("[data-channel='game']").data() !== undefined;
+  setTimeout(function() {
+    if ($isOnBoard && !$started) {
+      location.reload()
+    }
+  }, 1000);
 });

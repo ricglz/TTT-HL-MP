@@ -9,15 +9,17 @@ html{
 }
 
 footer{
-  height: 5px;
+  background-color: #555;
+  width: 100%;
+  height: 42px;
   ul {
     li{
-      font-size: 1em !important;
+      font-size: 1.2em !important;
       display: inline-block;
       margin: 0px 10px;
       a {
         text-decoration: none;
-        color: grey;
+        color: white;
       }
     }
   }

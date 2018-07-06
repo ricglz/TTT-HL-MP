@@ -28,6 +28,7 @@ es:
     sign_up: "Registrarse"
     log_in: "Iniciar sesión"
   messages:
+    sign_up_succesful: 'Te registraste exitosamente'
     login_successful: "Iniciaste sesión exitosamente"
     incorrect_password: "Contraseña incorrecta"
     user_unexistant: "El usuario no existe"

@@ -1,4 +1,13 @@
-.container
-  = simple_form_for :session, url: root_path  do |f|
-    = f.button :submit, t('attributes.log_in'), class: 'btn btn-secondary btn-float'
-  ul = render @boards
+= render 'boards/nav'
+.card.container.mb-4.mt-4
+  table.table
+    thead
+      tr.row
+        th.col-3 = t(:host)
+        th.col-8
+        th.col-1.mb-3
+          = simple_form_for :session do |f|
+            = f.button :button, class: 'btn btn-sm btn-float'
+              i.material-icons add
+    tbody
+      = render @boards

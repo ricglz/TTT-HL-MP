@@ -1,0 +1,12 @@
+header class="navbar navbar-dark navbar-full bg-primary doc-navbar-default"
+  button aria-controls="navdrawerDefault" aria-expanded="false" aria-label="Toggle Navdrawer" class="navbar-toggler" data-target="#navdrawerDefault" data-toggle="navdrawer"
+    span class="navbar-toggler-icon"
+  span class="navbar-brand mr-auto"Tic Tac Toe HL
+div aria-hidden="true" class="navdrawer" id="navdrawerDefault" tabindex="-1"
+  div class="navdrawer-content"
+    div class="navdrawer-header"
+      span class="navbar-brand px-0"=current_user.username
+    nav class="navdrawer-nav"
+      = link_to logout_path, method: :delete,class: "nav-item nav-link active"
+        i class="material-icons" exit_to_app
+        span =t(:log_out)

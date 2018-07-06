@@ -1,13 +1,12 @@
+# frozen_string_literal: true
+
+# Class that controls the board model
 class BoardsController < ApplicationController
   def show
     redirect_to log_in_path unless logged_in?
     @board = Board.find(params[:id])
-    if @board.nil?
-      redirect_to root_path
-    end
-    puts current_user.username
-    @board.guest = current_user.username unless is_host?(@board)
-    puts @board.guest
+    redirect_to root_path if @board.nil?
+    @board.guest = current_user.username unless host?(@board)
     @board.save
   end
 
@@ -24,7 +23,7 @@ class BoardsController < ApplicationController
 
   private
 
-  def is_host?(board)
+  def host?(board)
     current_user.username == board.host
   end
 end

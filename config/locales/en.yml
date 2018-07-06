@@ -48,6 +48,7 @@ en:
     sign_up: "Sign up"
     log_in: "Log in"
   messages:
+    sign_up_succesful: 'Successful sign up'
     login_successful: "Log in successful"
     incorrect_password: "Incorrect password"
     user_unexistant: "User doesn't exist"

@@ -1,6 +1,3 @@
-li.row
-  col
-    span Host:
-    span = board.host
-  col
-    = link_to "Join", game_path(board.id), class: "btn btn-primary btn-block"
+tr.row
+  th.col-3 = board.host
+  th.col-9 = link_to "Join", game_path(board.id), class: "btn btn-primary btn-block"
