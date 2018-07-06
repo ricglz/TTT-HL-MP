@@ -5,9 +5,7 @@ class BoardsController < ApplicationController
     if @board.nil?
       redirect_to root_path
     end
-    puts current_user.username
     @board.guest = current_user.username unless is_host?(@board)
-    puts @board.guest
     @board.save
   end
 
