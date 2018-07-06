@@ -41,7 +41,6 @@ App.game.received = function(data) {
   if (data['newcommer']) {
     startMatch();
     alertify.success("Match started");
-    return;
   }
   else if (data['resetGame']) {
     surrender(data['loser']);
