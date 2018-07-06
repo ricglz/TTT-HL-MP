@@ -57,9 +57,9 @@ App.game.received = function(data) {
 
 var surrender = function(loser) {
   if (loser==="X") {
-    changeScore($('.xScore').eq(0));
-  } else {
     changeScore($('.oScore').eq(0));
+  } else {
+    changeScore($('.xScore').eq(0));
   }
   resetGame();
 }
