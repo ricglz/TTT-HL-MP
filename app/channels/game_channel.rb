@@ -38,7 +38,7 @@ class GameChannel < ApplicationCable::Channel
     game_id = data['game_id']
     board = Board.find(game_id)
     player_turn = which_letter(board)
-    send_move if player_turn == data['turn']
+    send_move(game_id, data['move']) if player_turn == data['turn']
   end
 
   private
@@ -47,7 +47,7 @@ class GameChannel < ApplicationCable::Channel
     @username == board.host ? 'X' : 'O'
   end
 
-  def send_move
-    ActionCable.server.broadcast "room#{data['game_id']}", move: data['move']
+  def send_move(game_id, move)
+    ActionCable.server.broadcast "room#{game_id}", move: move
   end
 end

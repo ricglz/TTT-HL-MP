@@ -11,5 +11,6 @@ html
 
   body#application data-controller=controller.controller_name data-action=controller.action_name
     = render 'layouts/notification'
-    = yield
+    .content
+      = yield
     = render 'layouts/footer'

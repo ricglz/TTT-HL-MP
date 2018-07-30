@@ -5,12 +5,12 @@ class GameJob < ApplicationJob
   queue_as :default
 
   def perform(game_id)
-    broadcast(game_id) unless waiting?
+    broadcast(game_id) unless waiting?(game_id)
   end
 
   private
 
-  def waiting?
+  def waiting?(game_id)
     Board.find(game_id).guest.nil?
   end
 

@@ -52,3 +52,4 @@ en:
     login_successful: "Log in successful"
     incorrect_password: "Incorrect password"
     user_unexistant: "User doesn't exist"
+  waiting: 'Waiting for next player'
