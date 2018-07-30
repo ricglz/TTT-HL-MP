@@ -1,14 +1,14 @@
 =provide(:title, "Game")
 .text-center.message-container.mt-4.container
   h1 Multiplayer
-  span Waiting for next player
-.text-center.board-container.mt-4.container
+  span = t(:waiting)
+.text-center.board-container.mt-4.container.mb-4
   .row
     = render 'header'
   .row.d-flex.justify-content-center data-channel="game" data-game-id=@board.id
     = render 'game'
   .row
     .col
-      button#reset.btn.btn-danger.btn-block.btn-radius = t(:surrender)
+      a#reset.btn.btn-danger.btn-block.btn-radius.text-white = t(:surrender)
     .col
       = link_to t(:leave_game), root_path, id:"back", class: "btn btn-danger btn-block btn-radius text-white"

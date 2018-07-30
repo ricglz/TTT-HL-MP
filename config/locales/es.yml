@@ -32,3 +32,10 @@ es:
     login_successful: "Iniciaste sesión exitosamente"
     incorrect_password: "Contraseña incorrecta"
     user_unexistant: "El usuario no existe"
+  join: 'Unirse'
+  host: 'Anfitrión'
+  log_out: 'Cerrar sesión'
+  waiting: 'Esperando al siguiente usuario'
+  surrender: 'Rendirse'
+  leave_game: 'Abandonar juego'
+  score: 'Puntuación'
