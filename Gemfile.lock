@@ -133,7 +133,7 @@ GEM
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
     parallel (1.17.0)
-    parser (2.6.2.0)
+    parser (2.6.2.1)
       ast (~> 2.4.0)
     pg (1.1.4)
     popper_js (1.14.5)
@@ -179,7 +179,7 @@ GEM
       ffi (~> 1.0)
     redis (4.1.0)
     regexp_parser (1.4.0)
-    rubocop (0.67.1)
+    rubocop (0.67.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -276,7 +276,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails_12factor
   redis (~> 4.1)
-  rubocop (~> 0.67.1)
+  rubocop (~> 0.67.2)
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
