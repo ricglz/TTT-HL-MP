@@ -178,7 +178,7 @@ GEM
       ffi (~> 1.0)
     redis (4.1.0)
     regexp_parser (1.4.0)
-    rubocop (0.68.0)
+    rubocop (0.68.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -274,7 +274,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails_12factor
   redis (~> 4.1)
-  rubocop (~> 0.68.0)
+  rubocop (~> 0.68.1)
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
