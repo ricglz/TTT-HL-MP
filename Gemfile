@@ -12,7 +12,7 @@ gem 'material-sass', '~> 4.1.1'
 gem 'material_icons'
 gem 'pg', group: :production
 gem 'rails_12factor'
-gem 'rubocop', '~> 0.70.0', require: false
+gem 'rubocop', '~> 0.71.0', require: false
 gem 'simple_form'
 gem 'slim'
 gem 'sprockets', '~> 3.7.2'
